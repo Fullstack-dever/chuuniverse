@@ -1,0 +1,203 @@
+:root {
+  cursor: default;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-dark-mode: #11111b;
+  --color-light-mode: #ece7e1;
+  --color-ddd-color: #ddd;
+  --color-gray: #c4c4c4;
+  --color-purple: #8000ff;
+  --color-light-purple: #cf59e6;
+  --color-light-blue: #6bc5f8;
+  --color-navbarBorder-dark: #e2e2e207;
+  --color-shadowDark: rgba(0, 0, 0, 0.137);
+  --static-heading-gradient-blue: #b0f3f1;
+  --static-heading-gradient-pink: #ffcfdf;
+  --tech-stack-box-first-color: #1a1a29;
+  --tech-stack-box-second-color: rgba(27, 27, 40, 0);
+  --tech-stack-box-border-color: #292929
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #111;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font: normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}
+
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-image: radial-gradient(#0c1734 10%, #07172a 30%, #000000);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+#img-panel {
+  display: block;
+  position: absolute;
+  height: 35%;
+  width: 30%;
+  left: 35%;
+  top: 32.5%;
+  margin: 0 auto;
+  border-radius: 5%;
+  transition: box-shadow 0.1s, transform 0.1s;
+
+  /*
+    * Adding image to the background
+    * No relation to the hover effect.
+    */
+  background-repeat: no-repeat;
+}
+
+#img-panel:hover {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+#name {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  top: 10%;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 600;
+  align-items: flex-start;
+  color: transparent;
+  background: linear-gradient(-45deg, var(--color-light-blue), var(--color-light-purple), var(--color-light-blue), var(--color-light-purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 400% 400%;
+  -webkit-animation: 3s infinite gradient;
+  animation: 3s infinite gradient
+}
+
+@keyframes gradient {
+
+  0%,
+  100% {
+      background-position: 0 50%
+  }
+
+  50% {
+      background-position: 100% 50%
+  }
+}
+
+.jello:hover {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: #03e6ff;
+  -webkit-animation: .9s both jello-vertical;
+  animation: .9s both jello-vertical
+}
+
+@-webkit-keyframes jello-vertical {
+
+  0%,
+  100% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1)
+  }
+
+  30% {
+      -webkit-transform: scale3d(.75, 1.25, 1);
+      transform: scale3d(.75, 1.25, 1)
+  }
+
+  40% {
+      -webkit-transform: scale3d(1.25, .75, 1);
+      transform: scale3d(1.25, .75, 1)
+  }
+
+  50% {
+      -webkit-transform: scale3d(.85, 1.15, 1);
+      transform: scale3d(.85, 1.15, 1)
+  }
+
+  65% {
+      -webkit-transform: scale3d(1.05, .95, 1);
+      transform: scale3d(1.05, .95, 1)
+  }
+
+  75% {
+      -webkit-transform: scale3d(.95, 1.05, 1);
+      transform: scale3d(.95, 1.05, 1)
+  }
+}
+
+@keyframes jello-vertical {
+
+  0%,
+  100% {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1)
+  }
+
+  30% {
+      -webkit-transform: scale3d(.75, 1.25, 1);
+      transform: scale3d(.75, 1.25, 1)
+  }
+
+  40% {
+      -webkit-transform: scale3d(1.25, .75, 1);
+      transform: scale3d(1.25, .75, 1)
+  }
+
+  50% {
+      -webkit-transform: scale3d(.85, 1.15, 1);
+      transform: scale3d(.85, 1.15, 1)
+  }
+
+  65% {
+      -webkit-transform: scale3d(1.05, .95, 1);
+      transform: scale3d(1.05, .95, 1)
+  }
+
+  75% {
+      -webkit-transform: scale3d(.95, 1.05, 1);
+      transform: scale3d(.95, 1.05, 1)
+  }
+}
