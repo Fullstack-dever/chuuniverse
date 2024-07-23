@@ -11,7 +11,9 @@
   <link rel="stylesheet" media="screen" href="css/style.css">
 </head>
 
-<body>
+<body class="mouseTrack">
+  <div class="cursor-inner" id="cursor-inner"></div>
+  <div class="cursor-outer" id="cursor-outer"></div>
 
   <!-- particles.js container -->
   <div id="particles-js"></div>
@@ -29,12 +31,95 @@
     <p class="jello">E</p>
   </div>
 
-  <img id="img-panel" src="image/image.jpg">
+  <div class="image-container">
+    <span style="--i: 1">
+      <img
+        src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGRvZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+      />
+    </span>
+    <span style="--i: 2">
+      <img
+        src="https://images.unsplash.com/photo-1484399172022-72a90b12e3c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGdpcmx8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+      />
+    </span>
+    <span style="--i: 3">
+      <img
+        src="https://images.unsplash.com/photo-1581704906775-891dd5207444?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJveXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+      />
+    </span>
+    <span style="--i: 4">
+      <img
+        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+      />
+    </span>
+    <span style="--i: 5">
+      <img
+        src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bmF0dXJlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+      />
+    </span>
+    <span style="--i: 6">
+      <img
+        src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+      />
+    </span>
+    <span style="--i: 7">
+      <img
+        src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJvb2t8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+      />
+    </span>
+    <span style="--i: 8">
+      <img
+        src="https://images.unsplash.com/photo-1582142407894-ec85a1260a46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGdsYXNzZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
+      />
+    </span>
+  </div>
+
+  <div class="introduction">
+    <h1>CHUUNIVERSITY IS OUR LIFE.</h1>
+    <h2>CHUUNIVERSITY is always with you.</h2>
+    <h2>You are always with us.</h2>
+  </div>
 
   <!-- scripts -->
   <script src="js/particles.js"></script>
   <script src="js/app.js"></script>
   <script src="js/3deffect.js"></script>
+
+  <script>
+    const cursorInner = document.getElementById("cursor-inner");
+    const cursorOuter = document.getElementById("cursor-outer");
+    const links = document.querySelectorAll("a,label,button");
+
+    document.addEventListener("mousemove", function (e) {
+      const posX = e.clientX;
+      const posY = e.clientY;
+
+      cursorInner.style.left = `${posX}px`;
+      cursorInner.style.top = `${posY}px`;
+
+      // cursorOuter.style.left = `${posX}px`;
+      // cursorOuter.style.top = `${posY}px`;
+
+      cursorOuter.animate(
+        {
+          left: `${posX}px`,
+          top: `${posY}px`,
+        },
+        { duration: 500, fill: "forwards" }
+      );
+
+      links.forEach((link) => {
+        link.addEventListener("mouseenter", () => {
+          cursorInner.classList.add("hover");
+          cursorOuter.classList.add("hover");
+        });
+        link.addEventListener("mouseleave", () => {
+          cursorInner.classList.remove("hover");
+          cursorOuter.classList.remove("hover");
+        });
+      });
+    });
+  </script>
 
 </body>
 

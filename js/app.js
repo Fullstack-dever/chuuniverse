@@ -8,6 +8,38 @@ particlesJS.load('particles-js', 'particles.json', function() {
   console.log('particles.js loaded - callback');
 });
 */
+const imageContainer = document.querySelector(".image-container");
+const mouseTrack = document.querySelector(".mouseTrack");
+
+
+let mouseXStartP = 0;
+let mouseYStartP = 0;
+const scrollScale = 45;
+let x = 0;
+let scrollP = 0;
+
+mouseTrack.addEventListener('mousedown', function (e) {
+  mouseXStartP = e.layerX;
+  mouseYStartP = e.layerY;
+});
+
+mouseTrack.addEventListener('mouseup', function (e) {
+  const scale = Math.ceil(Math.abs(mouseXStartP - e.layerX)/200)*Math.sign(mouseXStartP - e.layerX);
+  x += scale*45;
+  rotate(x);
+});
+
+document.querySelector("body")
+  .addEventListener("mousewheel", e => {
+    scrollP = e.deltaY / Math.abs(e.deltaY);
+    x = x + scrollP * scrollScale;
+    console.log(x);
+    rotate(x);
+  });
+
+function rotate(x) {
+  imageContainer.style.transform = `perspective(1000px) rotateY(${x}deg)`;
+}
 
 /* Otherwise just put the config content (json): */
 
