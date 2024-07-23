@@ -261,3 +261,12 @@ img {
   bottom: 100px;
   color: #b0f3f1;
 }
+
+.prototype {
+  position: absolute;
+  left: 70%;
+  bottom: 100px;
+  color: #b0f3f1;
+  width: 25%;
+  
+}
