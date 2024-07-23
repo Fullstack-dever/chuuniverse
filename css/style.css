@@ -255,6 +255,11 @@ img {
   border-radius: 5%;
 }
 
+img:hover {
+  box-shadow: 0 0 5px 5px rgba(70, 183, 217, 0.6);
+  transform: scale(1.2);
+}
+
 .introduction {
   position: absolute;
   left: 100px;
